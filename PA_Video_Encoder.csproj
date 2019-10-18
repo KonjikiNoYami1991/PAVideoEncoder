@@ -213,7 +213,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo2.ico" />
     <Content Include="rsz_logo_unione_testo_verde_1_stn_icon.ico" />
     <Content Include="x86\MediaInfo.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
