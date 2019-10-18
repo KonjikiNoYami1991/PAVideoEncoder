@@ -36,14 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pb_mi = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mi)).BeginInit();
+            this.pb_mediainfo = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mediainfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // l_titolo
@@ -69,18 +68,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 13);
+            this.label1.Size = new System.Drawing.Size(169, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Copyright © 2019, Unione dei Comuni Valli del Reno, Lavino e Samoggia";
+            this.label1.Text = "Copyright © Simone Sociale, 2019";
             // 
             // rtb_descr
             // 
-            this.rtb_descr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.rtb_descr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtb_descr.Location = new System.Drawing.Point(12, 126);
             this.rtb_descr.Name = "rtb_descr";
             this.rtb_descr.ReadOnly = true;
-            this.rtb_descr.Size = new System.Drawing.Size(649, 96);
+            this.rtb_descr.Size = new System.Drawing.Size(649, 207);
             this.rtb_descr.TabIndex = 4;
             this.rtb_descr.Text = resources.GetString("rtb_descr.Text");
             // 
@@ -95,10 +94,10 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 234);
+            this.label3.Location = new System.Drawing.Point(9, 381);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 13);
             this.label3.TabIndex = 7;
@@ -106,24 +105,13 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(279, 430);
+            this.label8.Location = new System.Drawing.Point(430, 338);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Zeranoe\'s FFmpeg";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 365);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(188, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Questo programma NON include";
             // 
             // label7
             // 
@@ -136,9 +124,9 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 315);
+            this.label4.Location = new System.Drawing.Point(214, 338);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 13);
             this.label4.TabIndex = 19;
@@ -148,48 +136,47 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 453);
+            this.label9.Location = new System.Drawing.Point(9, 447);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(411, 13);
             this.label9.TabIndex = 20;
             this.label9.Text = "Tutte le licenze si trovano all\'interno della cartella \"Licenses\" presente nel pr" +
     "ogramma.";
             // 
-            // pictureBox4
+            // pb_mediainfo
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox4.Image = global::PA_Video_Encoder.Properties.Resources._247de69ed119ae92533d998bf4b065ba_400x400;
-            this.pictureBox4.Location = new System.Drawing.Point(294, 386);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(68, 41);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
+            this.pb_mediainfo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pb_mediainfo.Image = ((System.Drawing.Image)(resources.GetObject("pb_mediainfo.Image")));
+            this.pb_mediainfo.Location = new System.Drawing.Point(217, 354);
+            this.pb_mediainfo.Name = "pb_mediainfo";
+            this.pb_mediainfo.Size = new System.Drawing.Size(132, 83);
+            this.pb_mediainfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_mediainfo.TabIndex = 21;
+            this.pb_mediainfo.TabStop = false;
             // 
-            // pb_mi
+            // pictureBox2
             // 
-            this.pb_mi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pb_mi.Image = global::PA_Video_Encoder.Properties.Resources._512px_MediaInfo_Logo_svg;
-            this.pb_mi.Location = new System.Drawing.Point(294, 271);
-            this.pb_mi.Name = "pb_mi";
-            this.pb_mi.Size = new System.Drawing.Size(68, 41);
-            this.pb_mi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_mi.TabIndex = 6;
-            this.pb_mi.TabStop = false;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(412, 354);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(132, 83);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
             // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 475);
+            this.ClientSize = new System.Drawing.Size(673, 469);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pb_mediainfo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pb_mi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rtb_descr);
             this.Controls.Add(this.label1);
@@ -202,8 +189,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_mi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mediainfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,13 +202,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtb_descr;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pb_mi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pb_mediainfo;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

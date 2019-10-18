@@ -90,8 +90,6 @@
             this.rtb_log = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.ll_icons = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.apri_video = new System.Windows.Forms.OpenFileDialog();
             this.apri_cartella = new System.Windows.Forms.FolderBrowserDialog();
             this.timer_tempo = new System.Windows.Forms.Timer(this.components);
@@ -559,10 +557,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tab_tna.Controls.Add(this.tab_autohardsubber);
             this.tab_tna.Controls.Add(this.tab_log);
-            this.tab_tna.Location = new System.Drawing.Point(12, 119);
+            this.tab_tna.Location = new System.Drawing.Point(12, 87);
             this.tab_tna.Name = "tab_tna";
             this.tab_tna.SelectedIndex = 0;
-            this.tab_tna.Size = new System.Drawing.Size(1131, 446);
+            this.tab_tna.Size = new System.Drawing.Size(1131, 478);
             this.tab_tna.TabIndex = 11;
             // 
             // tab_autohardsubber
@@ -573,7 +571,7 @@
             this.tab_autohardsubber.Location = new System.Drawing.Point(4, 22);
             this.tab_autohardsubber.Name = "tab_autohardsubber";
             this.tab_autohardsubber.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_autohardsubber.Size = new System.Drawing.Size(1123, 420);
+            this.tab_autohardsubber.Size = new System.Drawing.Size(1123, 452);
             this.tab_autohardsubber.TabIndex = 0;
             this.tab_autohardsubber.Text = "Lista files e impostazioni (Totale files: 0)";
             this.tab_autohardsubber.UseVisualStyleBackColor = true;
@@ -585,7 +583,7 @@
             this.tb_help.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_help.Enabled = false;
             this.tb_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_help.Location = new System.Drawing.Point(278, 160);
+            this.tb_help.Location = new System.Drawing.Point(278, 176);
             this.tb_help.Multiline = true;
             this.tb_help.Name = "tb_help";
             this.tb_help.ReadOnly = true;
@@ -617,7 +615,7 @@
             this.DGV_video.Name = "DGV_video";
             this.DGV_video.RowHeadersWidth = 35;
             this.DGV_video.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DGV_video.Size = new System.Drawing.Size(1111, 408);
+            this.DGV_video.Size = new System.Drawing.Size(1111, 440);
             this.DGV_video.TabIndex = 2;
             this.DGV_video.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_video_CellValueChanged);
             this.DGV_video.CurrentCellDirtyStateChanged += new System.EventHandler(this.DGV_video_CurrentCellDirtyStateChanged);
@@ -725,10 +723,12 @@
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(330, 27);
+            this.button2.Location = new System.Drawing.Point(342, 27);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(10, 86);
+            this.button2.Size = new System.Drawing.Size(10, 54);
             this.button2.TabIndex = 16;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
@@ -736,37 +736,15 @@
             // button5
             // 
             this.button5.Enabled = false;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(493, 27);
+            this.button5.Location = new System.Drawing.Point(468, 27);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(10, 86);
+            this.button5.Size = new System.Drawing.Size(10, 54);
             this.button5.TabIndex = 17;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Visible = false;
-            // 
-            // ll_icons
-            // 
-            this.ll_icons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ll_icons.AutoSize = true;
-            this.ll_icons.Location = new System.Drawing.Point(1044, 27);
-            this.ll_icons.Name = "ll_icons";
-            this.ll_icons.Size = new System.Drawing.Size(99, 17);
-            this.ll_icons.TabIndex = 19;
-            this.ll_icons.TabStop = true;
-            this.ll_icons.Text = "http://dryicons.com";
-            this.ll_icons.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ll_icons.UseCompatibleTextRendering = true;
-            this.ll_icons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ll_icons_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(997, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Icons by";
             // 
             // apri_video
             // 
@@ -825,89 +803,102 @@
             // 
             // b_agg_files
             // 
-            this.b_agg_files.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_agg_files.Image = ((System.Drawing.Image)(resources.GetObject("b_agg_files.Image")));
+            this.b_agg_files.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.b_agg_files.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.b_agg_files.FlatAppearance.BorderSize = 0;
+            this.b_agg_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_agg_files.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_agg_files.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.b_agg_files.Location = new System.Drawing.Point(12, 27);
             this.b_agg_files.Name = "b_agg_files";
-            this.b_agg_files.Size = new System.Drawing.Size(100, 86);
+            this.b_agg_files.Size = new System.Drawing.Size(104, 54);
             this.b_agg_files.TabIndex = 12;
             this.b_agg_files.Text = "Aggiungi video";
-            this.b_agg_files.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.b_agg_files.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.b_agg_files.UseVisualStyleBackColor = true;
+            this.b_agg_files.UseVisualStyleBackColor = false;
             this.b_agg_files.Click += new System.EventHandler(this.b_agg_files_Click);
             // 
             // b_agg_cart
             // 
-            this.b_agg_cart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_agg_cart.Image = ((System.Drawing.Image)(resources.GetObject("b_agg_cart.Image")));
+            this.b_agg_cart.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.b_agg_cart.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.b_agg_cart.FlatAppearance.BorderSize = 0;
+            this.b_agg_cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_agg_cart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_agg_cart.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.b_agg_cart.Location = new System.Drawing.Point(118, 27);
+            this.b_agg_cart.Location = new System.Drawing.Point(122, 27);
             this.b_agg_cart.Name = "b_agg_cart";
-            this.b_agg_cart.Size = new System.Drawing.Size(100, 86);
+            this.b_agg_cart.Size = new System.Drawing.Size(104, 54);
             this.b_agg_cart.TabIndex = 15;
             this.b_agg_cart.Text = "Aggiungi cartelle";
-            this.b_agg_cart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.b_agg_cart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.b_agg_cart.UseVisualStyleBackColor = true;
+            this.b_agg_cart.UseVisualStyleBackColor = false;
             this.b_agg_cart.Click += new System.EventHandler(this.b_agg_cart_Click);
             // 
             // b_rimuovi
             // 
-            this.b_rimuovi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_rimuovi.Image = ((System.Drawing.Image)(resources.GetObject("b_rimuovi.Image")));
+            this.b_rimuovi.BackColor = System.Drawing.Color.Orange;
+            this.b_rimuovi.FlatAppearance.BorderSize = 0;
+            this.b_rimuovi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_rimuovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_rimuovi.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.b_rimuovi.Location = new System.Drawing.Point(346, 27);
+            this.b_rimuovi.Location = new System.Drawing.Point(358, 27);
             this.b_rimuovi.Name = "b_rimuovi";
-            this.b_rimuovi.Size = new System.Drawing.Size(141, 86);
+            this.b_rimuovi.Size = new System.Drawing.Size(104, 54);
             this.b_rimuovi.TabIndex = 14;
             this.b_rimuovi.Text = "Rimuovi files selezionati";
-            this.b_rimuovi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.b_rimuovi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.b_rimuovi.UseVisualStyleBackColor = true;
+            this.b_rimuovi.UseVisualStyleBackColor = false;
             this.b_rimuovi.Click += new System.EventHandler(this.B_rimuovi_Click);
             // 
             // b_avvia
             // 
-            this.b_avvia.Image = ((System.Drawing.Image)(resources.GetObject("b_avvia.Image")));
+            this.b_avvia.BackColor = System.Drawing.Color.LawnGreen;
+            this.b_avvia.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.b_avvia.FlatAppearance.BorderSize = 0;
+            this.b_avvia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_avvia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_avvia.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.b_avvia.Location = new System.Drawing.Point(509, 27);
+            this.b_avvia.Location = new System.Drawing.Point(484, 27);
             this.b_avvia.Name = "b_avvia";
-            this.b_avvia.Size = new System.Drawing.Size(100, 86);
+            this.b_avvia.Size = new System.Drawing.Size(104, 54);
             this.b_avvia.TabIndex = 5;
             this.b_avvia.Text = "AVVIA";
-            this.b_avvia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.b_avvia.UseVisualStyleBackColor = true;
+            this.b_avvia.UseVisualStyleBackColor = false;
             this.b_avvia.Click += new System.EventHandler(this.b_avvia_Click);
             // 
             // b_pause
             // 
+            this.b_pause.BackColor = System.Drawing.Color.Yellow;
             this.b_pause.Enabled = false;
-            this.b_pause.Image = ((System.Drawing.Image)(resources.GetObject("b_pause.Image")));
+            this.b_pause.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.b_pause.FlatAppearance.BorderSize = 0;
+            this.b_pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_pause.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_pause.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.b_pause.Location = new System.Drawing.Point(615, 27);
+            this.b_pause.Location = new System.Drawing.Point(594, 28);
             this.b_pause.Name = "b_pause";
-            this.b_pause.Size = new System.Drawing.Size(62, 67);
+            this.b_pause.Size = new System.Drawing.Size(104, 34);
             this.b_pause.TabIndex = 22;
             this.b_pause.Text = "PAUSA";
-            this.b_pause.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.b_pause.UseVisualStyleBackColor = true;
+            this.b_pause.UseVisualStyleBackColor = false;
+            this.b_pause.Visible = false;
             this.b_pause.Click += new System.EventHandler(this.b_pause_Click);
             // 
             // b_incolla
             // 
-            this.b_incolla.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.b_incolla.Image = ((System.Drawing.Image)(resources.GetObject("b_incolla.Image")));
+            this.b_incolla.BackColor = System.Drawing.Color.SpringGreen;
+            this.b_incolla.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.b_incolla.FlatAppearance.BorderSize = 0;
+            this.b_incolla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_incolla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_incolla.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.b_incolla.Location = new System.Drawing.Point(224, 27);
+            this.b_incolla.Location = new System.Drawing.Point(232, 27);
             this.b_incolla.Name = "b_incolla";
-            this.b_incolla.Size = new System.Drawing.Size(100, 86);
+            this.b_incolla.Size = new System.Drawing.Size(104, 54);
             this.b_incolla.TabIndex = 21;
             this.b_incolla.Text = "Incolla";
-            this.b_incolla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.b_incolla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.b_incolla.UseVisualStyleBackColor = true;
+            this.b_incolla.UseVisualStyleBackColor = false;
             this.b_incolla.Click += new System.EventHandler(this.b_incolla_Click);
             // 
             // barra_menu
@@ -1260,8 +1251,6 @@
             this.ClientSize = new System.Drawing.Size(1155, 661);
             this.Controls.Add(this.barra_menu);
             this.Controls.Add(this.barra_stato);
-            this.Controls.Add(this.ll_icons);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.b_agg_files);
             this.Controls.Add(this.b_agg_cart);
             this.Controls.Add(this.groupBox1);
@@ -1322,8 +1311,6 @@
         private System.Windows.Forms.Button b_agg_cart;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.LinkLabel ll_icons;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.OpenFileDialog apri_video;
         public System.Windows.Forms.FolderBrowserDialog apri_cartella;
         private System.Windows.Forms.Button b_incolla;

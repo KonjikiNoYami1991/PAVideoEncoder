@@ -135,6 +135,8 @@ namespace PA_Video_Encoder
             toolStripComboBox3.Items.Clear();
             toolStripComboBox4.Items.Clear();
 
+            toolStripMenuItem33.Image = SystemIcons.Information.ToBitmap();
+
             for (Int32 i = 0; i < compatibilita.Items.Count; i++)
             {
                 toolStripComboBox2.Items.Add(compatibilita.Items[i].ToString());
@@ -391,13 +393,14 @@ namespace PA_Video_Encoder
                 b_avvia.Text = "Ferma";
                 ripristinaImpostazioniToolStripMenuItem3.Enabled = false;
                 ripristinaImpostazioniToolStripMenuItem3.ShortcutKeys = Keys.None;
-                b_avvia.Image = (Image)PA_Video_Encoder.Properties.Resources.stop;
+                b_pause.Visible = true;
                 b_pause.Enabled = true;
-                b_agg_cart.Enabled = false;
-                b_agg_files.Enabled = false;
-                b_incolla.Enabled = false;
-                b_rimuovi.Enabled = false;
+                b_agg_cart.Visible = false;
+                b_agg_files.Visible = false;
+                b_incolla.Visible = false;
+                b_rimuovi.Visible = false;
                 DGV_video.ReadOnly = true;
+                b_avvia.BackColor = Color.OrangeRed;
                 strumentiToolStripMenuItem.Enabled = false;
                 modificaToolStripMenuItem.Enabled = false;
                 pb_tot.Value = 0;
@@ -416,20 +419,18 @@ namespace PA_Video_Encoder
                 {
                     ferma_tutto();
                     pause = false;
-                    b_pause.Image = (Image)PA_Video_Encoder.Properties.Resources.pause;
                     b_pause.Text = "Pausa";
                     b_avvia.Text = "Avvia";
-                    b_avvia.Image = (Image)PA_Video_Encoder.Properties.Resources.play;
-                    b_pause.Enabled = false;
-                    b_agg_cart.Enabled = true;
-                    b_agg_files.Enabled = true;
-                    b_incolla.Enabled = true;
-                    b_rimuovi.Enabled = true;
+                    b_pause.Visible = false;
+                    b_agg_cart.Visible = true;
+                    b_agg_files.Visible = true;
+                    b_incolla.Visible = true;
+                    b_rimuovi.Visible = true;
+                    b_avvia.BackColor = Color.LawnGreen;
                     ripristinaImpostazioniToolStripMenuItem3.Enabled = true;
                     ripristinaImpostazioniToolStripMenuItem3.ShortcutKeys = (Keys)Shortcut.CtrlR;
                     DGV_video.ReadOnly = false;
                     timer_tempo.Stop();
-                    DGV_video.ContextMenuStrip.Enabled = true;
                     DGV_video.Columns[DGV_video.Columns["input"].Index].ReadOnly = true;
                     DGV_video.Columns[DGV_video.Columns["stato"].Index].ReadOnly = true;
                     DGV_video.Columns[DGV_video.Columns["percorso_orig"].Index].ReadOnly = true;
@@ -571,7 +572,6 @@ namespace PA_Video_Encoder
             this.Invoke((MethodInvoker)delegate ()
             {
                 b_avvia.Text = "Avvia";
-                b_avvia.Image = (Image)PA_Video_Encoder.Properties.Resources.play;
                 b_pause.Enabled = false;
                 b_agg_cart.Enabled = true;
                 b_agg_files.Enabled = true;
@@ -1458,11 +1458,6 @@ namespace PA_Video_Encoder
             a.ShowDialog();
         }
 
-        private void ll_icons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start(ll_icons.Text);
-        }
-
         private void b_agg_files_Click(object sender, EventArgs e)
         {
             apri_video.Filter = filtro;
@@ -1694,15 +1689,15 @@ namespace PA_Video_Encoder
             {
                 SuspendProcess(processo_codifica.Id);
                 pause = true;
-                b_pause.Image = new Bitmap(PA_Video_Encoder.Properties.Resources.play, new Size(PA_Video_Encoder.Properties.Resources.pause.Width, PA_Video_Encoder.Properties.Resources.pause.Height));
                 b_pause.Text = "Riprendi";
+                b_pause.BackColor = Color.LawnGreen;
             }
             else
             {
                 ResumeProcess(processo_codifica.Id);
                 pause = false;
-                b_pause.Image = PA_Video_Encoder.Properties.Resources.pause;
                 b_pause.Text = "Pausa";
+                b_pause.BackColor = Color.Yellow;
             }
         }
 

@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Per modificare le informazioni associate a un assembly
 // occorre quindi modificare i valori di questi attributi.
-[assembly: AssemblyTitle("Free Video Encoder")]
-[assembly: AssemblyDescription("Piccolo e comodo encoder e remuxer")]
+[assembly: AssemblyTitle("PA Video Encoder")]
+[assembly: AssemblyDescription("Piccolo e comodo encoder")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Unione dei Comuni Valli del Reno, Lavino e Samoggia")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("Copyright © Unione dei Comuni Valle del Reno, Lavino e Samoggia 2019")]
-[assembly: AssemblyTrademark("UCRLS")]
+[assembly: AssemblyCopyright("Copyright © Simone Sociale, Unione dei Comuni Valle del Reno, Lavino e Samoggia 2019")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Se si imposta ComVisible su false, i tipi in questo assembly non saranno visibili 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // È possibile specificare tutti i valori oppure impostare valori predefiniti per i numeri relativi alla revisione e alla build 
 // utilizzando l'asterisco (*) come descritto di seguito:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.8.2")]
-[assembly: AssemblyFileVersion("0.9.8.1")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
