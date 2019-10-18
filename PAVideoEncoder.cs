@@ -33,7 +33,7 @@ namespace PA_Video_Encoder
 
         String azione_fine_coda = "Non fare niente";
 
-        readonly String[] estensioni_video = { ".mkv", ".mp4", ".ts", ".avi", ".mov", ".ogm", ".mpg", ".mpeg", ".m4v" };
+        readonly String[] estensioni_video = { ".mkv", ".mp4", ".ts", ".avi", ".mov", ".ogm", ".mpg", ".mpeg", ".m4v", ".webm" };
 
         String comando = String.Empty, durata = String.Empty, fc = String.Empty;
 
@@ -131,21 +131,21 @@ namespace PA_Video_Encoder
 
             this.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
-            cmb_compatibilita.Items.Clear();
-            cmb_qualita.Items.Clear();
-            cmb_risoluz.Items.Clear();
+            toolStripComboBox2.Items.Clear();
+            toolStripComboBox3.Items.Clear();
+            toolStripComboBox4.Items.Clear();
 
             for (Int32 i = 0; i < compatibilita.Items.Count; i++)
             {
-                cmb_compatibilita.Items.Add(compatibilita.Items[i].ToString());
+                toolStripComboBox2.Items.Add(compatibilita.Items[i].ToString());
             }
             for (Int32 i = 0; i < qualita.Items.Count; i++)
             {
-                cmb_qualita.Items.Add(qualita.Items[i].ToString());
+                toolStripComboBox4.Items.Add(qualita.Items[i].ToString());
             }
             for (Int32 i = 0; i < risoluz.Items.Count; i++)
             {
-                cmb_risoluz.Items.Add(risoluz.Items[i].ToString());
+                toolStripComboBox3.Items.Add(risoluz.Items[i].ToString());
             }
             
             foreach (String s in estensioni_video)
@@ -205,26 +205,26 @@ namespace PA_Video_Encoder
 
         public void LeggiImpostazioni_Compatibilita(String Value)
         {
-            if (cmb_compatibilita.Items.Contains(Value))
-                cmb_compatibilita.Text = Value;
+            if (toolStripComboBox2.Items.Contains(Value))
+                toolStripComboBox2.Text = Value;
             else
-                cmb_compatibilita.Text = "Bluray AAC";
+                toolStripComboBox2.Text = "Bluray AAC";
         }
 
         public void LeggiImpostazioni_Risoluzione(String Value)
         {
-            if (cmb_risoluz.Items.Contains(Value))
-                cmb_risoluz.Text = Value;
+            if (toolStripComboBox3.Items.Contains(Value))
+                toolStripComboBox3.Text = Value;
             else
-                cmb_risoluz.Text = "720p";
+                toolStripComboBox3.Text = "720p";
         }
 
         public void LeggiImpostazioni_Qualita(String Value)
         {
-            if (cmb_qualita.Items.Contains(Value))
-                cmb_qualita.Text = Value;
+            if (toolStripComboBox4.Items.Contains(Value))
+                toolStripComboBox4.Text = Value;
             else
-                cmb_qualita.Text = "Media";
+                toolStripComboBox4.Text = "Media";
         }
 
         public void LeggiImpostazioni(String FileINI)
@@ -243,27 +243,27 @@ namespace PA_Video_Encoder
                     LeggiImpostazioni_Compatibilita(ini.Read("comp"));
                 }
                 else
-                    cmb_compatibilita.Text = "Bluray AAC";
+                    toolStripComboBox2.Text = "Bluray AAC";
 
                 if (ini.KeyExists("qual"))
                 {
                     LeggiImpostazioni_Qualita(ini.Read("qual"));
                 }
                 else
-                    cmb_qualita.Text = "Media";
+                    toolStripComboBox4.Text = "Media";
 
                 if (ini.KeyExists("risoluz"))
                 {
                     LeggiImpostazioni_Risoluzione(ini.Read("risoluz"));
                 }
                 else
-                    cmb_risoluz.Text = "720p";
+                    toolStripComboBox3.Text = "720p";
             }
             else
             {
-                cmb_compatibilita.Text = "Bluray AAC";
-                cmb_risoluz.Text = "720p";
-                cmb_qualita.Text = "Media";
+                toolStripComboBox2.Text = "Bluray AAC";
+                toolStripComboBox3.Text = "720p";
+                toolStripComboBox4.Text = "Media";
             }
         }
 
@@ -312,7 +312,7 @@ namespace PA_Video_Encoder
                     {
                         if (estensioni_video.Contains(Path.GetExtension(s).ToLower()) == true)
                         {
-                            DGV_video.Rows.Add(Path.GetFileName(s), cmb_compatibilita.Text, cmb_risoluz.Text, cmb_qualita.Text, "PRONTO", Path.GetDirectoryName(s));
+                            DGV_video.Rows.Add(Path.GetFileName(s), toolStripComboBox2.Text, toolStripComboBox3.Text, toolStripComboBox4.Text, "PRONTO", Path.GetDirectoryName(s));
                         }
                     }
                     else
@@ -352,7 +352,7 @@ namespace PA_Video_Encoder
 
                 foreach(String s in temp)
                 {
-                    DGV_video.Rows.Add(Path.GetFileName(s), cmb_compatibilita.Text, cmb_risoluz.Text, cmb_qualita.Text, "PRONTO", Path.GetDirectoryName(s));
+                    DGV_video.Rows.Add(Path.GetFileName(s), toolStripComboBox2.Text, toolStripComboBox3.Text, toolStripComboBox4.Text, "PRONTO", Path.GetDirectoryName(s));
                 }
 
                 if (DGV_video.Rows.Count > 0)
@@ -383,7 +383,6 @@ namespace PA_Video_Encoder
             if (b_avvia.Text.StartsWith("A") && presente == true)
             {
                 DGV_video.ClearSelection();
-                DGV_video.ContextMenuStrip.Enabled = false;
                 indice_percentuale = 0;
                 ts = new ThreadStart(encode);
                 t = new Thread(ts);
@@ -1404,7 +1403,7 @@ namespace PA_Video_Encoder
         {
             foreach (DataGridViewRow d in DGV_video.SelectedRows)
             {
-                d.Cells[DGV_video.Columns["compatibilita"].Index].Value = cmb_compatibilita.Text;
+                d.Cells[DGV_video.Columns["compatibilita"].Index].Value = toolStripComboBox2.Text;
                 String p = d.Cells[DGV_video.Columns["compatibilita"].Index].Value.ToString();
             }
         }
@@ -1413,7 +1412,7 @@ namespace PA_Video_Encoder
         {
             foreach (DataGridViewRow d in DGV_video.SelectedRows)
             {
-                d.Cells[DGV_video.Columns["qualita"].Index].Value = cmb_qualita.Text;
+                d.Cells[DGV_video.Columns["risoluz"].Index].Value = toolStripComboBox4.Text;
             }
         }
 
@@ -1445,9 +1444,9 @@ namespace PA_Video_Encoder
         {
             IniFile ini = new IniFile(file_settings);
 
-            ini.Write("comp", cmb_compatibilita.Text);
-            ini.Write("risoluz", cmb_risoluz.Text);
-            ini.Write("qual", cmb_qualita.Text);
+            ini.Write("comp", toolStripComboBox2.Text);
+            ini.Write("risoluz", toolStripComboBox3.Text);
+            ini.Write("qual", toolStripComboBox4.Text);
 
         }
 
@@ -1471,7 +1470,7 @@ namespace PA_Video_Encoder
             {
                 foreach (String s in apri_video.FileNames)
                 {
-                    DGV_video.Rows.Add(Path.GetFileName(s), cmb_compatibilita.Text, cmb_risoluz.Text, cmb_qualita.Text, "PRONTO", Path.GetDirectoryName(s));
+                    DGV_video.Rows.Add(Path.GetFileName(s), toolStripComboBox2.Text, toolStripComboBox3.Text, toolStripComboBox4.Text, "PRONTO", Path.GetDirectoryName(s));
                 }
                 b_avvia.Enabled = true;
                 tab_autohardsubber.Text = label_tab_lista + " (Totale files: " + DGV_video.Rows.Count.ToString() + ")";
@@ -1494,7 +1493,7 @@ namespace PA_Video_Encoder
                     {
                         if (PA_Video_Encoder.Seleziona_formati.formati_scelti.Contains(Path.GetExtension(s).ToLower()) == true)
                         {
-                            DGV_video.Rows.Add(Path.GetFileName(s), cmb_compatibilita.Text, cmb_risoluz.Text, cmb_qualita.Text, "PRONTO", Path.GetDirectoryName(s));
+                            DGV_video.Rows.Add(Path.GetFileName(s), toolStripComboBox2.Text, toolStripComboBox3.Text, toolStripComboBox4.Text, "PRONTO", Path.GetDirectoryName(s));
                         }
                     }
                 }
@@ -1720,7 +1719,7 @@ namespace PA_Video_Encoder
         {
             foreach (DataGridViewRow d in DGV_video.SelectedRows)
             {
-                d.Cells[DGV_video.Columns["risoluz"].Index].Value = cmb_risoluz.Text;
+                d.Cells[DGV_video.Columns["qualita"].Index].Value = toolStripComboBox4.Text;
             }
         }
 
