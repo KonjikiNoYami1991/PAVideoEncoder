@@ -93,7 +93,6 @@
             this.apri_video = new System.Windows.Forms.OpenFileDialog();
             this.apri_cartella = new System.Windows.Forms.FolderBrowserDialog();
             this.timer_tempo = new System.Windows.Forms.Timer(this.components);
-            this.tt_encode = new System.Windows.Forms.ToolTip(this.components);
             this.barra_stato = new System.Windows.Forms.StatusStrip();
             this.pb_tot = new System.Windows.Forms.ToolStripProgressBar();
             this.ts_perc = new System.Windows.Forms.ToolStripStatusLabel();
@@ -705,7 +704,7 @@
             this.tab_log.Location = new System.Drawing.Point(4, 22);
             this.tab_log.Name = "tab_log";
             this.tab_log.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_log.Size = new System.Drawing.Size(1123, 420);
+            this.tab_log.Size = new System.Drawing.Size(1123, 452);
             this.tab_log.TabIndex = 1;
             this.tab_log.Text = "LOG";
             this.tab_log.UseVisualStyleBackColor = true;
@@ -716,7 +715,7 @@
             this.rtb_log.Location = new System.Drawing.Point(3, 3);
             this.rtb_log.Name = "rtb_log";
             this.rtb_log.ReadOnly = true;
-            this.rtb_log.Size = new System.Drawing.Size(1117, 414);
+            this.rtb_log.Size = new System.Drawing.Size(1117, 446);
             this.rtb_log.TabIndex = 0;
             this.rtb_log.Text = "";
             // 
@@ -764,15 +763,6 @@
             // 
             this.timer_tempo.Interval = 1000;
             this.timer_tempo.Tick += new System.EventHandler(this.timer_tempo_Tick);
-            // 
-            // tt_encode
-            // 
-            this.tt_encode.AutoPopDelay = 7500;
-            this.tt_encode.InitialDelay = 500;
-            this.tt_encode.IsBalloon = true;
-            this.tt_encode.ReshowDelay = 100;
-            this.tt_encode.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.tt_encode.ToolTipTitle = "Riquadro codifica/remux";
             // 
             // barra_stato
             // 
@@ -984,7 +974,7 @@
             this.toolStripComboBox2,
             this.toolStripMenuItem9});
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(146, 22);
             this.toolStripMenuItem8.Text = "Compatibilità";
             // 
             // toolStripComboBox2
@@ -1017,7 +1007,7 @@
             this.toolStripComboBox3,
             this.toolStripMenuItem11});
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(146, 22);
             this.toolStripMenuItem10.Text = "Risoluzione";
             // 
             // toolStripComboBox3
@@ -1046,7 +1036,7 @@
             this.toolStripComboBox4,
             this.toolStripMenuItem13});
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(146, 22);
             this.toolStripMenuItem12.Text = "Qualità";
             // 
             // toolStripComboBox4
@@ -1103,21 +1093,21 @@
             // toolStripMenuItem18
             // 
             this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(118, 22);
             this.toolStripMenuItem18.Text = "Ok";
             this.toolStripMenuItem18.Click += new System.EventHandler(this.oKToolStripMenuItem_Click);
             // 
             // toolStripMenuItem19
             // 
             this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem19.Size = new System.Drawing.Size(118, 22);
             this.toolStripMenuItem19.Text = "Fermato";
             this.toolStripMenuItem19.Click += new System.EventHandler(this.fermatoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem20
             // 
             this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            this.toolStripMenuItem20.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem20.Size = new System.Drawing.Size(118, 22);
             this.toolStripMenuItem20.Text = "Errore";
             this.toolStripMenuItem20.Click += new System.EventHandler(this.erroreToolStripMenuItem_Click);
             // 
@@ -1135,28 +1125,28 @@
             // toolStripMenuItem22
             // 
             this.toolStripMenuItem22.Name = "toolStripMenuItem22";
-            this.toolStripMenuItem22.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem22.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItem22.Text = "Tutti";
             this.toolStripMenuItem22.Click += new System.EventHandler(this.tuttiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem23
             // 
             this.toolStripMenuItem23.Name = "toolStripMenuItem23";
-            this.toolStripMenuItem23.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItem23.Text = "Completati";
             this.toolStripMenuItem23.Click += new System.EventHandler(this.completatiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem24
             // 
             this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem24.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItem24.Text = "Fermati";
             this.toolStripMenuItem24.Click += new System.EventHandler(this.fermatiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem25
             // 
             this.toolStripMenuItem25.Name = "toolStripMenuItem25";
-            this.toolStripMenuItem25.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem25.Size = new System.Drawing.Size(133, 22);
             this.toolStripMenuItem25.Text = "Con errori";
             this.toolStripMenuItem25.Click += new System.EventHandler(this.conErroriToolStripMenuItem_Click);
             // 
@@ -1177,14 +1167,14 @@
             // toolStripMenuItem27
             // 
             this.toolStripMenuItem27.Name = "toolStripMenuItem27";
-            this.toolStripMenuItem27.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem27.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem27.Text = "Crea";
             this.toolStripMenuItem27.Click += new System.EventHandler(this.creaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem28
             // 
             this.toolStripMenuItem28.Name = "toolStripMenuItem28";
-            this.toolStripMenuItem28.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem28.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem28.Text = "Cancella";
             this.toolStripMenuItem28.Click += new System.EventHandler(this.cancellaToolStripMenuItem_Click);
             // 
@@ -1266,7 +1256,7 @@
             this.MinimumSize = new System.Drawing.Size(1171, 700);
             this.Name = "PAVideoEncoder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PAVE - PA Video Encoder";
+            this.Text = "PAVE - PA Video Encoder v1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FVE_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1338,7 +1328,6 @@
         private System.Windows.Forms.Button b_pause;
         private System.Windows.Forms.ToolStripMenuItem allaFineDellaCodaDiLavoroToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolTip tt_encode;
         private System.Windows.Forms.Button b_avvia;
         private System.Windows.Forms.ToolStripMenuItem risoluzioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox cmb_risoluz;

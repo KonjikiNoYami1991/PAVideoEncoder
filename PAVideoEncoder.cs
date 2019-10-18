@@ -1452,7 +1452,7 @@ namespace PA_Video_Encoder
 
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            About a = new About(this.Text, this.Text.Split(' ')[3]);
+            About a = new About(this.Text, this.Text.Split(' ')[5]);
             a.Icon = this.Icon;
             a.ShowInTaskbar = false;
             a.ShowDialog();
