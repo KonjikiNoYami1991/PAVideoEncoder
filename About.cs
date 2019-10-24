@@ -19,5 +19,10 @@ namespace PA_Video_Encoder
             l_vers.Text = "Versione: " + versione;
             this.Text = "Informazioni - " + titolo;
         }
+
+        private void ll_source_code_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/KonjikiNoYami1991/PAVideoEncoder");
+        }
     }
 }
