@@ -1411,7 +1411,7 @@ namespace PA_Video_Encoder
         {
             foreach (DataGridViewRow d in DGV_video.SelectedRows)
             {
-                d.Cells[DGV_video.Columns["risoluz"].Index].Value = toolStripComboBox4.Text;
+                d.Cells[DGV_video.Columns["risoluz"].Index].Value = toolStripComboBox3.Text;
             }
         }
 
@@ -1854,13 +1854,18 @@ namespace PA_Video_Encoder
             Framerate = (media.Video[0].FrameRate).ToString();
             DurataPrecisa = TimeSpan.FromMilliseconds(media.Video[0].Duration);
             TotaleFrames = media.Video[0].FrameCount;
-            if (media.Video[0].miOption("ScanType").StartsWith("P"))
+            String interl = media.Video[0].miGetString("ScanType").ToLower();
+            switch (interl)
             {
-                Interlacciato = false;
-            }
-            else
-            {
-                Interlacciato = true;
+                case "progressive":
+                    Interlacciato = false;
+                    break;
+                case "interlaced":
+                    Interlacciato = true;
+                    break;
+                default:
+                    Interlacciato = false;
+                    break;
             }
             Larghezza = media.Video[0].Width;
             Altezza = media.Video[0].Height;
