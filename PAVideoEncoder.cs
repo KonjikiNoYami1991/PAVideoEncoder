@@ -605,8 +605,7 @@ namespace PA_Video_Encoder
                 if (vid.Format.ToLower().Contains("mpeg") || vid.Format.ToLower().Contains("avc") || vid.Format.ToLower().Contains("hevc"))
                 {
                     comando_remux += " -map 0:" + (vid.ID - 1).ToString() + " -c:v:" + cont_video.ToString() + " copy";
-                    String framerate = (vid.FrameRate / 1000.0).ToString();
-                    comando_remux += " -r " + framerate.Replace(",", ".");
+                    comando_remux += " -r " + vid.FrameRate.ToString().Replace(",", ".");
                     fc = Math.Round((Double)vid.FrameCount/* / 1000.0*/, 0, MidpointRounding.AwayFromZero).ToString();
                     Double altezza = vid.Height;
                     Double larghezza = vid.Width;
@@ -616,8 +615,7 @@ namespace PA_Video_Encoder
                 else
                 {
                     comando_remux += " -map 0:" + (vid.ID - 1).ToString() + " -c:v:" + cont_video.ToString() + " libx264";
-                    String framerate = (vid.FrameRate / 1000.0).ToString().Replace(",", ".");
-                    comando_remux += " -r " + framerate;
+                    comando_remux += " -r " + vid.FrameRate.ToString().Replace(",", ".");
                     fc = Math.Round((Double)vid.FrameCount/* / 1000.0*/, 0, MidpointRounding.AwayFromZero).ToString();
                     
                     String aspect = Math.Round((Double)vid.Width / (Double)vid.Height, 3, MidpointRounding.AwayFromZero).ToString();
