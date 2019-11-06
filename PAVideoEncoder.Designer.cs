@@ -93,10 +93,6 @@
             this.apri_video = new System.Windows.Forms.OpenFileDialog();
             this.apri_cartella = new System.Windows.Forms.FolderBrowserDialog();
             this.timer_tempo = new System.Windows.Forms.Timer(this.components);
-            this.barra_stato = new System.Windows.Forms.StatusStrip();
-            this.pb_tot = new System.Windows.Forms.ToolStripProgressBar();
-            this.ts_perc = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ts_avanz = new System.Windows.Forms.ToolStripStatusLabel();
             this.b_agg_files = new System.Windows.Forms.Button();
             this.b_agg_cart = new System.Windows.Forms.Button();
             this.b_rimuovi = new System.Windows.Forms.Button();
@@ -142,12 +138,17 @@
             this.toolStripComboBox5 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripMenuItem32 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem33 = new System.Windows.Forms.ToolStripMenuItem();
+            this.barra_stato = new System.Windows.Forms.StatusStrip();
+            this.pb_tot = new System.Windows.Forms.ToolStripProgressBar();
+            this.ts_perc = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ts_avanz = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.tab_tna.SuspendLayout();
             this.tab_autohardsubber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_video)).BeginInit();
             this.tab_log.SuspendLayout();
             this.barra_menu.SuspendLayout();
+            this.barra_stato.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileToolStripMenuItem
@@ -764,33 +765,6 @@
             this.timer_tempo.Interval = 1000;
             this.timer_tempo.Tick += new System.EventHandler(this.timer_tempo_Tick);
             // 
-            // barra_stato
-            // 
-            this.barra_stato.Location = new System.Drawing.Point(0, 639);
-            this.barra_stato.Name = "barra_stato";
-            this.barra_stato.Size = new System.Drawing.Size(1155, 22);
-            this.barra_stato.TabIndex = 23;
-            // 
-            // pb_tot
-            // 
-            this.pb_tot.Name = "pb_tot";
-            this.pb_tot.Size = new System.Drawing.Size(300, 18);
-            // 
-            // ts_perc
-            // 
-            this.ts_perc.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.ts_perc.Name = "ts_perc";
-            this.ts_perc.Size = new System.Drawing.Size(42, 19);
-            this.ts_perc.Text = "0,00%";
-            // 
-            // ts_avanz
-            // 
-            this.ts_avanz.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ts_avanz.Name = "ts_avanz";
-            this.ts_avanz.Size = new System.Drawing.Size(207, 19);
-            this.ts_avanz.Text = "Avanzamento elaborazione - Nessuno";
-            this.ts_avanz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            // 
             // b_agg_files
             // 
             this.b_agg_files.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -1229,9 +1203,41 @@
             // toolStripMenuItem33
             // 
             this.toolStripMenuItem33.Name = "toolStripMenuItem33";
-            this.toolStripMenuItem33.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem33.Size = new System.Drawing.Size(95, 22);
             this.toolStripMenuItem33.Text = "Info";
             this.toolStripMenuItem33.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            // 
+            // barra_stato
+            // 
+            this.barra_stato.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pb_tot,
+            this.ts_perc,
+            this.ts_avanz});
+            this.barra_stato.Location = new System.Drawing.Point(0, 637);
+            this.barra_stato.Name = "barra_stato";
+            this.barra_stato.Size = new System.Drawing.Size(1155, 24);
+            this.barra_stato.TabIndex = 25;
+            this.barra_stato.Text = "statusStrip1";
+            // 
+            // pb_tot
+            // 
+            this.pb_tot.Name = "pb_tot";
+            this.pb_tot.Size = new System.Drawing.Size(300, 18);
+            // 
+            // ts_perc
+            // 
+            this.ts_perc.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.ts_perc.Name = "ts_perc";
+            this.ts_perc.Size = new System.Drawing.Size(42, 19);
+            this.ts_perc.Text = "0,00%";
+            // 
+            // ts_avanz
+            // 
+            this.ts_avanz.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ts_avanz.Name = "ts_avanz";
+            this.ts_avanz.Size = new System.Drawing.Size(207, 19);
+            this.ts_avanz.Text = "Avanzamento elaborazione - Nessuno";
+            this.ts_avanz.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
             // PAVideoEncoder
             // 
@@ -1239,8 +1245,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1155, 661);
-            this.Controls.Add(this.barra_menu);
             this.Controls.Add(this.barra_stato);
+            this.Controls.Add(this.barra_menu);
             this.Controls.Add(this.b_agg_files);
             this.Controls.Add(this.b_agg_cart);
             this.Controls.Add(this.groupBox1);
@@ -1267,6 +1273,8 @@
             this.tab_log.ResumeLayout(false);
             this.barra_menu.ResumeLayout(false);
             this.barra_menu.PerformLayout();
+            this.barra_stato.ResumeLayout(false);
+            this.barra_stato.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1332,10 +1340,6 @@
         private System.Windows.Forms.ToolStripMenuItem risoluzioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox cmb_risoluz;
         private System.Windows.Forms.ToolStripMenuItem confermaToolStripMenuItem2;
-        private System.Windows.Forms.StatusStrip barra_stato;
-        private System.Windows.Forms.ToolStripStatusLabel ts_avanz;
-        private System.Windows.Forms.ToolStripProgressBar pb_tot;
-        private System.Windows.Forms.ToolStripStatusLabel ts_perc;
         private System.Windows.Forms.ToolStripMenuItem apriCartellaLogsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.RichTextBox rtb_log;
@@ -1384,6 +1388,10 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem32;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem33;
+        private System.Windows.Forms.StatusStrip barra_stato;
+        private System.Windows.Forms.ToolStripProgressBar pb_tot;
+        private System.Windows.Forms.ToolStripStatusLabel ts_perc;
+        private System.Windows.Forms.ToolStripStatusLabel ts_avanz;
     }
 }
 

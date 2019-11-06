@@ -433,7 +433,7 @@ namespace PA_Video_Encoder
                     DGV_video.Columns[DGV_video.Columns["input"].Index].ReadOnly = true;
                     DGV_video.Columns[DGV_video.Columns["stato"].Index].ReadOnly = true;
                     DGV_video.Columns[DGV_video.Columns["percorso_orig"].Index].ReadOnly = true;
-                    DGV_video.Rows[indice_percentuale].Cells[DGV_video.Columns["stato"].Index].Value = "FERMATO - " + ts_perc.Text;
+                    DGV_video.Rows[indice_percentuale].Cells[DGV_video.Columns["stato"].Index].Value = "FERMATO - " + ts_avanz.Text;
                     DGV_video.Rows[indice_percentuale].Cells[DGV_video.Columns["stato"].Index].Style.BackColor = Color.Yellow;
                     strumentiToolStripMenuItem.Enabled = true;
                     modificaToolStripMenuItem.Enabled = true;
@@ -571,16 +571,15 @@ namespace PA_Video_Encoder
             this.Invoke((MethodInvoker)delegate ()
             {
                 b_avvia.Text = "Avvia";
-                b_pause.Enabled = false;
-                b_agg_cart.Enabled = true;
-                b_agg_files.Enabled = true;
-                b_incolla.Enabled = true;
-                b_rimuovi.Enabled = true;
+                b_pause.Visible = false;
+                b_agg_cart.Visible = true;
+                b_agg_files.Visible = true;
+                b_incolla.Visible = true;
+                b_rimuovi.Visible = true;
                 ripristinaImpostazioniToolStripMenuItem3.Enabled = true;
                 ripristinaImpostazioniToolStripMenuItem3.ShortcutKeys = (Keys)Shortcut.CtrlR;
                 DGV_video.ReadOnly = false;
                 timer_tempo.Stop();
-                DGV_video.ContextMenuStrip.Enabled = true;
                 DGV_video.Columns[DGV_video.Columns["input"].Index].ReadOnly = true;
                 DGV_video.Columns[DGV_video.Columns["stato"].Index].ReadOnly = true;
                 DGV_video.Columns[DGV_video.Columns["percorso_orig"].Index].ReadOnly = true;
@@ -805,7 +804,7 @@ namespace PA_Video_Encoder
                 case 0:
                     this.Invoke((MethodInvoker)delegate ()
                     {
-                        ts_perc.Text = "100.00%";
+                        ts_perc.Text = "100,00%";
                         pb_tot.Value = pb_tot.Maximum;
                         DGV_video.Rows[indice_percentuale].Cells[DGV_video.Columns["stato"].Index].Value = "OK - " + ts_perc.Text;
                         DGV_video.Rows[indice_percentuale].Cells[DGV_video.Columns["stato"].Index].Style.BackColor = Color.LightGreen;
